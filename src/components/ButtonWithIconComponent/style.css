@@ -1,0 +1,12 @@
+.ButtonBody{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 0 1rem;
+  }
+  .ButtonBody img{
+    width: 42px;
+    height: 42px;
+    margin-right: .5rem;
+  }
+  
