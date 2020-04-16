@@ -3,10 +3,10 @@ import "./style.css";
 import MenuComponent from "../MenuComponent";
 import WelcomePhraseComponent from '../WelcomePhraseComponent';
 
-const HeaderComponent = () => {
+const HeaderComponent = ({changeFilterStateCallback}) => {
    return (
     <>
-      <MenuComponent />
+      <MenuComponent changeFilterStateCallback={changeFilterStateCallback}/>
       <header className="headerBody">
       <WelcomePhraseComponent/>
       </header>

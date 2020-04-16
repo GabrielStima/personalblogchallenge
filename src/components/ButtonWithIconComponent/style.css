@@ -1,8 +1,15 @@
 .ButtonBody{
     display: flex;
+    cursor: pointer;
     align-items: center;
     flex-direction: row;
-    margin: 0 1rem;
+    margin: 0 .5rem;
+    padding: .2rem 1rem;
+    border-radius: 8px;
+    transition-duration: .5s;
+  }
+  .ButtonBody:hover{
+    background-color: rgba(0, 0, 0, 0.1);
   }
   .ButtonBody img{
     width: 42px;
