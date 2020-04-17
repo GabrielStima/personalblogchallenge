@@ -11,7 +11,9 @@ const generateListPublications = (arrayPublications, arrayAuthors) => {
     return {
       title: item.title,
       body: item.body,
-      publishedAt: `${date.getMonth()}/${date.getDay()}/${date.getFullYear()}`,
+      publishedAt: `${
+        date.getMonth() + 1
+      }/${date.getDay()}/${date.getFullYear()}`,
       author: currentAuthor[0].name,
     };
   });

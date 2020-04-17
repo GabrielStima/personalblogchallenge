@@ -1,8 +1,10 @@
 import React from 'react';
-import './styles';
+import './style.css';
 
-export default function footerComponent() {
+export default function FooterComponent() {
   return (
-    <div></div>
+    <div className="footer">
+      Copyright © 2020 | Gabriel Rocha Stimamiglio
+    </div>
   );
 }

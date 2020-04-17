@@ -1,0 +1,12 @@
+.spinnerLoader{
+    border: 8px solid rgba(0, 0, 0, 0.1);
+    border-left-color: rgb(141, 141, 141);
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin{
+    to { transform: rotate(360deg);}
+}

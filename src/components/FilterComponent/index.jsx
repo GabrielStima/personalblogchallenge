@@ -6,6 +6,7 @@ import ArrowDropdown from '../../assets/img/down-arrow.svg';
 export default function FilterComponent() {
   const [arrowDirection, setArrowDirection] = useState(false);
   const [currentFilter, setCurrentFilter] = useState("Title");
+
   const arrowDirectionWatch = () => {
     return !arrowDirection ? "arrowUp" : "arrowDown";
   }
