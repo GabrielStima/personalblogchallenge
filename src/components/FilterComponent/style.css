@@ -76,6 +76,7 @@
     border: 1px solid rgb(201,201,201);
     padding: 0 .5rem;
     font-size: 1rem;
+    outline: none;
 }
 .iconSearch{
     width: 4rem;

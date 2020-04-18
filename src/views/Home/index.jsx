@@ -5,6 +5,8 @@ import ListPublicationsComponent from '../../components/ListPublicationsComponen
 
 const Home = ({filterObjectMiddlewareCallback, listPublications}) => {
   const [list, setList] = useState([]);
+  const [loader, setLoader] = useState(true);
+  const [filterObj] = useState(filterObjectMiddlewareCallback());
 
   useEffect(()=>{
     Promise.resolve(listPublications).then((res) => {
@@ -12,15 +14,25 @@ const Home = ({filterObjectMiddlewareCallback, listPublications}) => {
   })
   }, [listPublications])
 
+  useEffect(()=>{
+    if(listPublications.length === 0 ){
+      setLoader(true);
+    }else{
+      setTimeout(()=>{
+        setLoader(false);
+      },1000)
+    }
+  }, [listPublications])
+
   return (
       <>
-      {list.length === 0 ? (
+      {loader ? (
           <div className="loader">
             <SpinnerLoaderComponent/>
           </div>
         ) : (
           <>
-            <ListPublicationsComponent list={list} filter={filterObjectMiddlewareCallback()}/>
+            <ListPublicationsComponent list={list} filter={filterObj}/>
           </>
       )}
       </>

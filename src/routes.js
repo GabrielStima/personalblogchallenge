@@ -25,8 +25,21 @@ const Routes = ({ filterObjectMiddlewareCallback }) => {
           />
         )}
       />
-      <Route exact path="/latests-posts" component={LatestsPosts} />
-      <Route exact path="/post/:id" component={CompletePost} />
+      <Route
+        exact
+        path="/latests-posts"
+        component={() => (
+          <LatestsPosts
+            listPublications={listPublications}
+            filterObjectMiddlewareCallback={filterObjectMiddlewareCallback}
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/post/:id"
+        component={() => <CompletePost listPublications={listPublications} />}
+      />
     </Switch>
   );
 };

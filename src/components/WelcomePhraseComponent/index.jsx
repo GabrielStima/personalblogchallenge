@@ -8,10 +8,10 @@ const WelcomePhraseComponent = () => {
   const [author, setAuthor] = useState('');
 
   useEffect(()=>{
-    Promise.resolve(service.getWelcomePhrase()).then((res) => (
-      setQuote(res.quote),
+    Promise.resolve(service.getWelcomePhrase()).then((res) => {
+      setQuote(res.quote)
       setAuthor(res.author)
-    ))
+    })
   }, [])
 
   return (

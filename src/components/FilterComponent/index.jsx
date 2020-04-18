@@ -21,10 +21,8 @@ export default class FilterComponent extends Component {
   }
 
   observerForFilterObject = () => {
-    if(this.state.textSeached.length > 0){
-      const filterObject = {text: this.state.textSeached, filterOption: this.state.currentFilter}
-      this.props.filterObjectMiddlewareCallback(filterObject);
-    }
+    const filterObject = {text: this.state.textSeached, filterOption: this.state.currentFilter}
+    this.props.filterObjectMiddlewareCallback(filterObject);
   }
 
   filterObjectManager = (data, type) => {
