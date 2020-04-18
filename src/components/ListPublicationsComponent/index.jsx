@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import "./style.css";
-import PostComponent from "../PostComponent";
+import NothingToShow from "../NothingToShow";
+import DemoPostComponent from "../DemoPostComponent";
 import OrderArrow from "../../assets/img/order.svg";
 const ListPublicationsComponent = ({ list, filter }) => {
   const [listRender, setListRender] = useState([]);
   const [filterListRender, setFilterListRender] = useState([]);
   const [order, setOrder] = useState(false);
+  const [notFindAnything, setNotFindAnything] = useState(false);
 
   useEffect(() => {
     if(list?.length > 0){
@@ -36,9 +37,12 @@ const ListPublicationsComponent = ({ list, filter }) => {
       }
 
       const result = getFilter(filter,list);
-
-      if(result){
+      
+      if(result.length){
+        setNotFindAnything(false)
         setFilterListRender(result)
+      }else{
+        setNotFindAnything(true)
       }
 
     }else{
@@ -91,22 +95,20 @@ const ListPublicationsComponent = ({ list, filter }) => {
         <img src={OrderArrow} alt="ordenate arrows" />
         {changeOrderTextButton()}
       </div>
-      {!listRender.length ? (
-        <>
-          <div className="dontHaveAnythingToShow">There are no posts to show</div>
-        </>
+      {!listRender.length || notFindAnything ? (
+        <NothingToShow text="There are no posts to show"/>
       ):(
         <>
         {!filterListRender.length ? (
           <>
             {listRender.map((item, index) => (
-              <PostComponent post={item} position={index} key={index} />
+              <DemoPostComponent post={item} position={index} key={index} />
             ))}
           </>
         ) : (
           <>
             {filterListRender.map((item, index) => (
-              <PostComponent post={item} position={index} key={index} />
+              <DemoPostComponent post={item} position={index} key={index} />
             ))}
           </>
         )}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import service from "./services/ListPublications";
 
@@ -6,20 +6,27 @@ import Home from "./views/Home";
 import LatestsPosts from "./views/LatestsPosts";
 import CompletePost from "./views/CompletePost";
 
-const getListPublications = async () => {
-  return await service.getListPublications();
-};
-
-const listPublications = getListPublications();
-
 const Routes = ({ filterObjectMiddlewareCallback }) => {
+  const [listPublications, setListPublications] = useState([]);
+
+  useEffect(() => {
+    let isSubscribed = true;
+    service.getListPublications().then((res) => {
+      if (isSubscribed) {
+        setListPublications(res);
+      }
+    });
+    return () => (isSubscribed = false);
+  }, []);
+
   return (
     <Switch>
       <Route
         exact
         path="/"
-        component={() => (
+        render={(props) => (
           <Home
+            {...props}
             filterObjectMiddlewareCallback={filterObjectMiddlewareCallback}
             listPublications={listPublications}
           />
@@ -28,8 +35,9 @@ const Routes = ({ filterObjectMiddlewareCallback }) => {
       <Route
         exact
         path="/latests-posts"
-        component={() => (
+        render={(props) => (
           <LatestsPosts
+            {...props}
             listPublications={listPublications}
             filterObjectMiddlewareCallback={filterObjectMiddlewareCallback}
           />
@@ -38,7 +46,9 @@ const Routes = ({ filterObjectMiddlewareCallback }) => {
       <Route
         exact
         path="/post/:id"
-        component={() => <CompletePost listPublications={listPublications} />}
+        render={(props) => (
+          <CompletePost {...props} listPublications={listPublications} />
+        )}
       />
     </Switch>
   );
