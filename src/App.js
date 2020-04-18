@@ -10,6 +10,7 @@ function App() {
   const [isFilter, setIsFilter] = useState(false);
   const [transitionEffect, setTransitionEffect] = useState(false);
   const [transitionComplement, setTransitionComplement] = useState(true);
+  const [filterObj, setFilterObj] = useState({ text: "", filterOption: "" });
 
   const changeFilterState = () => {
     if (!isFilter) {
@@ -39,6 +40,14 @@ function App() {
     }, 100);
   };
 
+  const filterObjectMiddleware = (data) => {
+    if (data) {
+      setFilterObj(data);
+    } else {
+      return filterObj;
+    }
+  };
+
   return (
     <div className="App">
       <div className="bodyPage">
@@ -50,7 +59,9 @@ function App() {
                 isFilter && "showFilterComponent"
               } ${transitionComplement && "hiddenFilterComponent"}`}
             >
-              <FilterComponent />
+              <FilterComponent
+                filterObjectMiddlewareCallback={filterObjectMiddleware}
+              />
             </div>
             <div
               className={`routesRender ${
@@ -59,7 +70,7 @@ function App() {
                 !transitionEffect && !transitionComplement && "routesRenderUp"
               }`}
             >
-              <Routes />
+              <Routes filterObjectMiddlewareCallback={filterObjectMiddleware} />
             </div>
           </div>
         </BrowserRouter>

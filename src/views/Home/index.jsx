@@ -1,27 +1,26 @@
 import React, {useEffect, useState} from 'react';
 import './style.css';
-import service from '../../services/ListPublications';
 import SpinnerLoaderComponent from '../../components/SpinnerLoaderComponent';
 import ListPublicationsComponent from '../../components/ListPublicationsComponent';
 
-const Home = () => {
-  const [listPublications, setListPublications] = useState([]);
+const Home = ({filterObjectMiddlewareCallback, listPublications}) => {
+  const [list, setList] = useState([]);
 
   useEffect(()=>{
-    Promise.resolve(service.getListPublications()).then((res) => {
-        setListPublications(res)
-    })
-  }, [])
+    Promise.resolve(listPublications).then((res) => {
+      setList(res)
+  })
+  }, [listPublications])
 
   return (
       <>
-      {listPublications.length === 0 ? (
+      {list.length === 0 ? (
           <div className="loader">
             <SpinnerLoaderComponent/>
           </div>
         ) : (
           <>
-            <ListPublicationsComponent list={listPublications}/>
+            <ListPublicationsComponent list={list} filter={filterObjectMiddlewareCallback()}/>
           </>
       )}
       </>
