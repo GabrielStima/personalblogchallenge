@@ -1,25 +1,7 @@
-.ordenateButton{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    width: 7rem;
-    padding: .3rem;
-    box-sizing: border-box;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-}
-.ordenateButton:hover{
-    background-color: rgba(0, 0, 0, 0.1);
-}
-.ordenateButton img{
-    width: 1.5rem;
-    height: 1.5rem;
-}
-.loader{
-    width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.loader {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

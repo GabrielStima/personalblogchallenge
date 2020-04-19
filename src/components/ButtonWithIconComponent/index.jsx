@@ -1,11 +1,18 @@
-import React from 'react';
-import './style.css'
-const ButtonWithIconComponent = ({text, icon, onClick}) => {
+import React from "react";
+import "./style.css";
+const ButtonWithIconComponent = ({
+  text,
+  icon,
+  alt = "image icon",
+  onClick,
+}) => {
   return (
-    <div className="ButtonBody" onClick={onClick && onClick}>
-        <img src={icon} alt=""/>
-        {text}
-    </div>
+    <button className="ButtonBody" onClick={onClick && onClick}>
+      <figure>
+        <img src={icon} alt={alt} />
+      </figure>
+      <p>{text}</p>
+    </button>
   );
 };
 

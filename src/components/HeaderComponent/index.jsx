@@ -1,14 +1,14 @@
 import React from "react";
 import "./style.css";
 import MenuComponent from "../MenuComponent";
-import WelcomePhraseComponent from '../WelcomePhraseComponent';
+import WelcomePhraseComponent from "../WelcomePhraseComponent";
 
-const HeaderComponent = ({changeFilterStateCallback}) => {
-   return (
+const HeaderComponent = ({ changeFilterStateCallback }) => {
+  return (
     <>
-      <MenuComponent changeFilterStateCallback={changeFilterStateCallback}/>
+      <MenuComponent changeFilterStateCallback={changeFilterStateCallback} />
       <header className="headerBody">
-      <WelcomePhraseComponent/>
+        <WelcomePhraseComponent />
       </header>
     </>
   );

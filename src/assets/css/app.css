@@ -1,0 +1,43 @@
+.App {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: 90% auto;
+}
+
+.bodyPage {
+  box-sizing: border-box;
+  width: 100vw;
+  grid-row-start: 1;
+}
+
+.bodyContent {
+  padding: 0 2rem 2rem 2rem;
+}
+
+.filterComponent {
+  opacity: 0;
+  transition: all 0.5s;
+  display: block;
+}
+
+.filterComponent.hiddenFilterComponent {
+  display: none;
+}
+
+.showFilterComponent {
+  opacity: 1;
+}
+
+.routesRender {
+  position: relative;
+  top: 0rem;
+  transition: all 0.5s;
+}
+
+.routesRenderDown {
+  top: 11rem;
+}
+
+.routesRenderUp {
+  top: -11rem;
+}

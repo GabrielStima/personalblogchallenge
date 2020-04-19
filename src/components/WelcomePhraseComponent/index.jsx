@@ -1,26 +1,27 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import service from "../../services/WelcomePhrase";
 import "./style.css";
 
-
 const WelcomePhraseComponent = () => {
-  const [quote, setQuote] = useState('');
-  const [author, setAuthor] = useState('');
+  const [quote, setQuote] = useState("");
+  const [author, setAuthor] = useState("");
 
-  useEffect(()=>{
+  useEffect(() => {
     Promise.resolve(service.getWelcomePhrase()).then((res) => {
-      setQuote(res.quote)
-      setAuthor(res.author)
-    })
-  }, [])
+      setQuote(res.quote);
+      setAuthor(res.author);
+    });
+  }, []);
 
   return (
     <>
       <div className="phraseLayer">
-            <div className="phraseText">{quote}</div>
-            <div className="phraseAuthor">
-              <span>{author}</span>
-            </div>
+        <div className="phraseText">
+          <p>{quote}</p>
+        </div>
+        <div className="phraseAuthor">
+          <p>{author}</p>
+        </div>
       </div>
     </>
   );

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Routes from "./routes";
 import "./assets/css/global.css";
+import "./assets/css/app.css";
+import FooterComponent from "./components/FooterComponent";
 import HeaderComponent from "./components/HeaderComponent";
 import FilterComponent from "./components/FilterComponent";
-import FooterComponent from "./components/FooterComponent";
 import { BrowserRouter } from "react-router-dom";
 
 function App() {
@@ -49,7 +50,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <main className="App">
       <div className="bodyPage">
         <BrowserRouter>
           <HeaderComponent changeFilterStateCallback={changeFilterState} />
@@ -75,10 +76,8 @@ function App() {
           </div>
         </BrowserRouter>
       </div>
-      <footer>
-        <FooterComponent />
-      </footer>
-    </div>
+      <FooterComponent />
+    </main>
   );
 }
 

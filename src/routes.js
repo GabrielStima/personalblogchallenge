@@ -24,7 +24,7 @@ const Routes = ({ filterObjectMiddlewareCallback }) => {
       <Route
         exact
         path="/"
-        render={(props) => (
+        component={(props) => (
           <Home
             {...props}
             filterObjectMiddlewareCallback={filterObjectMiddlewareCallback}
@@ -35,7 +35,7 @@ const Routes = ({ filterObjectMiddlewareCallback }) => {
       <Route
         exact
         path="/latests-posts"
-        render={(props) => (
+        component={(props) => (
           <LatestsPosts
             {...props}
             listPublications={listPublications}
@@ -46,7 +46,7 @@ const Routes = ({ filterObjectMiddlewareCallback }) => {
       <Route
         exact
         path="/post/:id"
-        render={(props) => (
+        component={(props) => (
           <CompletePost {...props} listPublications={listPublications} />
         )}
       />

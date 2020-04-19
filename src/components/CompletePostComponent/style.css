@@ -1,46 +1,50 @@
-.completePostBody{
-    box-sizing: border-box;
-    border: rgb(201, 201, 201) solid 1px;
-    border-radius: 10px;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-items: flex-start;
-    margin-bottom: 1rem;
-    font-style: italic;
+.completePostBody {
+  box-sizing: border-box;
+  border: rgb(201, 201, 201) solid 1px;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-start;
+  margin-bottom: 1rem;
+  font-style: italic;
 }
-.completePostBody *:last-child{
-    margin: .4rem 0 0 0;
+.completePostText {
+  margin: 0.4rem 0 0 0;
+  font-style: normal;
 }
-.completePostBody h3{
-    font-weight: 500;
-    font-style: italic;
-    font-size: 2.5em;
-    margin-bottom: .1rem;
+.completePostBody h3 {
+  font-weight: 500;
+  font-style: normal;
+  font-size: 2.5em;
+  margin-bottom: 0.1rem;
 }
-.completePostHeader{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    margin-bottom: 1rem;
+.completePostHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
 }
-a{
-    text-decoration: none;
-    color: #000000;
+a {
+  text-decoration: none;
+  color: #000000;
 }
-.goBack{
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    padding: .3rem;
-    width: 5rem;
-    border-radius: 8px;
-    background-color: rgba(164, 164, 164, 0.56);
+.goBack {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding: 0.3rem;
+  width: 5rem;
+  border-radius: 8px;
+  background-color: rgba(164, 164, 164, 0.56);
 }
-.goBack:hover{
-    background-color: rgba(0, 0, 0, 0.5);
+.goBack:hover {
+  background-color: rgba(0, 0, 0, 0.5);
 }
-.completePostInfo{
-    margin-bottom: 1rem;
+.completePostInfo {
+  margin-bottom: 1rem;
+}
+.completePostPublished {
+  margin-top: 0;
 }
