@@ -5,11 +5,6 @@ import "./style.css";
 const CompletePostComponent = ({ post }) => {
   return (
     <>
-      <div className="completePostHeader">
-        <Link to={`/`}>
-          <div className="goBack">Go Back</div>
-        </Link>
-      </div>
       <article className="completePostBody">
         <section className="completePostInfo">
           <h3>{post.title}</h3>

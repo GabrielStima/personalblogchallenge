@@ -3,7 +3,6 @@
   cursor: pointer;
   align-items: center;
   flex-direction: row;
-  margin: 0 0.5rem;
   padding: 0.2rem 1rem;
   border-radius: 8px;
   transition-duration: 0.5s;
@@ -15,8 +14,9 @@
 .ButtonBody:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
-.ButtonBody img {
-  width: 42px;
-  height: 41px;
-  margin-right: 0.5rem;
+@media (max-width: 1024px) {
+  .ButtonBody {
+    font-weight: 350;
+    padding: 0.2rem 0;
+  }
 }

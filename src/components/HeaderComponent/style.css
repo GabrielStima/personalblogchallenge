@@ -1,10 +1,15 @@
-.headerBody{
-    background: url('../../assets/img/FirstSection.png');;
-    width: 100%;
-    height: 54vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2rem;
+.headerBody {
+  background: url("../../assets/img/FirstSection.png");
+  background-size: cover;
+  width: 100%;
+  height: 54vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+@media (max-width: 425px) {
+  .headerBody {
+    padding-top: 2rem;
   }
-  
+}
