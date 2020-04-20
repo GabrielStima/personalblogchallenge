@@ -98,6 +98,10 @@
   background-color: rgb(201, 201, 201);
   border-radius: 0 8px 8px 0;
 }
+.iconSearch img {
+  width: inherit;
+  height: 1.7rem;
+}
 
 @media (max-width: 1024px) {
   .filterTitle{

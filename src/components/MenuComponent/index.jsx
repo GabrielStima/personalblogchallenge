@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
-import ButtonWithIconComponent from "../ButtonWithIconComponent";
+import ButtonWithLinkComponent from "../ButtonWithLinkComponent";
 import BookIcon from "../../assets/img/book.svg";
 import MenuIconWhite from "../../assets/img/menuIconWhite.svg";
 import MenuIconBlack from "../../assets/img/menuIconBlack.svg";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const MenuComponent = ({ changeFilterStateCallback }) => {
   const history = useHistory();
@@ -20,13 +20,19 @@ const MenuComponent = ({ changeFilterStateCallback }) => {
 
   return (
     <>
-      <div className={`mobileLogo ${collapseSidebar && "mobileLogoFixed"}`} onClick={() => setCollapseSidebar(!collapseSidebar)}>
+      <div
+        className={`mobileLogo ${collapseSidebar && "mobileLogoFixed"}`}
+        onClick={() => setCollapseSidebar(!collapseSidebar)}
+      >
         <figure>
-          <img src={!collapseSidebar ? MenuIconWhite : MenuIconBlack} alt="Principal icon" />
+          <img
+            src={!collapseSidebar ? MenuIconWhite : MenuIconBlack}
+            alt="Principal icon"
+          />
         </figure>
       </div>
 
-      <nav className={`menuBar ${collapseSidebar && 'openSidebar'}`}>
+      <nav className={`menuBar ${collapseSidebar && "openSidebar"}`}>
         <div className="websiteLogo">
           <figure>
             <img src={BookIcon} alt="Principal icon" />
@@ -34,13 +40,9 @@ const MenuComponent = ({ changeFilterStateCallback }) => {
           <p className="nameSite">Gabriel Stimamiglio</p>
         </div>
         <div className="menuOptions">
-          <Link to="/">
-            <ButtonWithIconComponent text="Home" />
-          </Link>
-          <Link to="/latests-posts">
-            <ButtonWithIconComponent text="Latest Posts" />
-          </Link>
-          <ButtonWithIconComponent
+          <ButtonWithLinkComponent text="Home" link="/" />
+          <ButtonWithLinkComponent text="Latest Posts" link="/latests-posts" />
+          <ButtonWithLinkComponent
             text="Filter"
             onClick={changeFilterStateCallback}
           />

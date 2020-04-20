@@ -1,42 +1,42 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from "react";
 import CompletePostComponent from "../../components/CompletePostComponent";
-import SpinnerLoaderComponent from '../../components/SpinnerLoaderComponent';
-import NothingToShow from '../../components/NothingToShow';
+import SpinnerLoaderComponent from "../../components/SpinnerLoaderComponent";
+import NothingToShowComponent from "../../components/NothingToShowComponent";
 
-const CompletePost = ({match, listPublications}) => {
+const CompletePost = ({ match, listPublications }) => {
   const [currentPost, setCurrentPost] = useState(null);
   const [loader, setLoader] = useState(true);
 
-  useEffect(()=>{
-    const post = listPublications.find((item,index)=>{
+  useEffect(() => {
+    const post = listPublications.find((item, index) => {
       return index === parseInt(match.params.id);
     });
     setCurrentPost(post);
-  }, [listPublications,match])
+  }, [listPublications, match]);
 
-  useEffect(()=>{
-    if(listPublications.length === 0 ){
+  useEffect(() => {
+    if (listPublications.length === 0) {
       setLoader(true);
-    }else{
-      setTimeout(()=>{
+    } else {
+      setTimeout(() => {
         setLoader(false);
-      },1000)
+      }, 1000);
     }
-  }, [listPublications])
+  }, [listPublications]);
 
   return (
     <>
       {loader ? (
         <div className="loader">
-          <SpinnerLoaderComponent/>
+          <SpinnerLoaderComponent />
         </div>
       ) : (
         <>
-        {currentPost === undefined ? (
-          <NothingToShow text="Post not found"/>
-        ) : (
-          <CompletePostComponent post={currentPost}/>
-        )}
+          {currentPost === undefined ? (
+            <NothingToShowComponent text="Post not found" />
+          ) : (
+            <CompletePostComponent post={currentPost} />
+          )}
         </>
       )}
     </>

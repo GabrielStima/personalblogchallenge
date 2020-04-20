@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
-import NothingToShow from "../NothingToShow";
+import NothingToShowComponent from "../NothingToShowComponent";
 import DemoPostComponent from "../DemoPostComponent";
 import OrderArrow from "../../assets/img/order.svg";
 
@@ -98,7 +98,7 @@ const ListPublicationsComponent = ({ list, filter }) => {
         <p>{changeOrderTextButton()}</p>
       </div>
       {!listRender.length || notFindAnything ? (
-        <NothingToShow text="There are no posts to show" />
+        <NothingToShowComponent text="There are no posts to show" />
       ) : (
         <>
           {!filterListRender.length ? (

@@ -1,68 +1,13 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# AXUR Challenge
 
-## Available Scripts
+### Dificuldades encontradas
 
-In the project directory, you can run:
+Na sexta-feira tive problemas com meu provedor de Internet que só consegui resolver no sabado a tarde, por conta disse tive um atraso no andamento do desafio. 
+Com esse atraso acabei por não conseguir terminar os testes de todos os componentes da aplicação e não consegui configurar o webpack para atender todas as requisições. Em relação ao webpack a aplicação foi gerado a partir do `npx create-react-app XXXXX` e por conta disse ele já vem pre-configurado com scripts prontos e os mesmos foram deixados.
+O único script que muda a forma de executar é o **build** que ao invés de `npm build` deve ser executado com `npm run build`.
 
-### `yarn start`
+### Processo de criação do layout
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Antes de começar a codificar eu optei por desenhar a UX de como eu gostaria que fosse um blog meu. Não tinha a intenção de ser 100% fiel ao visual criado inicialmente mas sua criação foi em prol da organização de ideias, para ver o projeto por favor entre nesse link.
+[Esboço do projeto](https://xd.adobe.com/spec/612986ca-7b7a-41ac-6ef1-934139260b5e-1718/).
+Ferramenta: Adobe XD
