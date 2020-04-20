@@ -50,17 +50,17 @@ export default class FilterComponent extends Component {
               this.setState({ arrowDirection: !this.state.arrowDirection })
             }
           >
-            {this.state.currentFilter}
+            <p>{this.state.currentFilter}</p>
             <div
               className={`dropdown-content ${
                 this.state.arrowDirection && "active"
               }`}
             >
               <div onClick={() => this.filterObjectManager("Title", "Option")}>
-                Title
+                <p>Title</p>
               </div>
               <div onClick={() => this.filterObjectManager("Author", "Option")}>
-                Author
+                <p>Author</p>
               </div>
             </div>
             <figure>

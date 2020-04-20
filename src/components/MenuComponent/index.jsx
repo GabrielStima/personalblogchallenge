@@ -20,7 +20,7 @@ const MenuComponent = ({ changeFilterStateCallback }) => {
 
   return (
     <>
-      <div className="mobileLogo" onClick={() => setCollapseSidebar(!collapseSidebar)}>
+      <div className={`mobileLogo ${collapseSidebar && "mobileLogoFixed"}`} onClick={() => setCollapseSidebar(!collapseSidebar)}>
         <figure>
           <img src={!collapseSidebar ? MenuIconWhite : MenuIconBlack} alt="Principal icon" />
         </figure>
