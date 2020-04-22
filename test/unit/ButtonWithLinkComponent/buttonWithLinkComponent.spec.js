@@ -1,5 +1,6 @@
 import React from "react";
 import ButtonWithLinkComponent from "../../../src/components/ButtonWithLinkComponent";
+import { MemoryRouter } from "react-router-dom";
 import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
 
@@ -32,5 +33,17 @@ describe("ButtonWithLink component tests", () => {
     expect(
       container.querySelector("[data-testid='buttonText']").textContent
     ).toEqual("Test");
+  });
+  test("render button with Link", () => {
+    act(() => {
+      render(
+        <MemoryRouter>
+          <ButtonWithLinkComponent link="/test"/>
+        </MemoryRouter>
+       , container);
+    });
+    expect(
+      container.querySelector("[data-testid='buttonLink']").getAttribute("href")
+    ).toEqual("/test");
   });
 });
