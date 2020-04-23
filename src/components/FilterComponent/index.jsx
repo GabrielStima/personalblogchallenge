@@ -46,25 +46,36 @@ export default class FilterComponent extends Component {
         <form className="filterBody">
           <div
             className="dropdown"
+            data-testid="filterDropdownButton"
             onClick={() =>
               this.setState({ arrowDirection: !this.state.arrowDirection })
             }
           >
-            <p>{this.state.currentFilter}</p>
+            <p data-testid="filterDropdownText">{this.state.currentFilter}</p>
             <div
-              className={`dropdown-content ${
-                this.state.arrowDirection && "active"
-              }`}
+              data-testid="filterDropdownContent"
+              className={
+                this.state.arrowDirection
+                  ? "dropdown-content active"
+                  : "dropdown-content"
+              }
             >
-              <div onClick={() => this.filterObjectManager("Title", "Option")}>
+              <div
+                data-testid="filterDropdownOptionTitle"
+                onClick={() => this.filterObjectManager("Title", "Option")}
+              >
                 <p>Title</p>
               </div>
-              <div onClick={() => this.filterObjectManager("Author", "Option")}>
+              <div
+                data-testid="filterDropdownOptionAuthor"
+                onClick={() => this.filterObjectManager("Author", "Option")}
+              >
                 <p>Author</p>
               </div>
             </div>
             <figure>
               <img
+                data-testid="filterDropdownArrow"
                 src={ArrowDropdown}
                 alt="arrowDropdown"
                 className={this.arrowDirectionWatch()}
@@ -72,6 +83,7 @@ export default class FilterComponent extends Component {
             </figure>
           </div>
           <input
+            data-testid="filterDropdownInput"
             type="text"
             className="inputFilter"
             placeholder="What are you looking for?"
