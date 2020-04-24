@@ -3,7 +3,7 @@ import "./style.css";
 
 const FooterComponent = () => {
   return (
-    <footer className="footer">
+    <footer data-testid="footer" className="footer">
       <div className="footerDiv">
         Copyright © 2020 | Gabriel Rocha Stimamiglio
       </div>

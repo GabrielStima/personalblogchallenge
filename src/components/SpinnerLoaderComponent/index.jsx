@@ -1,10 +1,12 @@
-import React from 'react';
-import './style.css';
+import React from "react";
+import "./style.css";
 
 const SpinnerLoaderComponent = () => {
   return (
-    <div className="spinnerLoader"/>
+    <div className="spinnerLoaderDiv">
+      <div data-testid="spinnerLoader" className="spinnerLoader" />
+    </div>
   );
-}
+};
 
 export default SpinnerLoaderComponent;

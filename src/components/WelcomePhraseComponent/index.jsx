@@ -15,7 +15,7 @@ const WelcomePhraseComponent = () => {
 
   return (
     <>
-      <div className="phraseLayer">
+      <div data-testid="welcomePhrase" className="phraseLayer">
         <div className="phraseText">
           <p>{quote}</p>
         </div>

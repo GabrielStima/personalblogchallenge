@@ -1,3 +1,9 @@
+.spinnerLoaderDiv{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .spinnerLoader{
     border: 8px solid rgba(0, 0, 0, 0.1);
     border-left-color: rgb(141, 141, 141);

@@ -1,6 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const appDirectory = fs.realpathSync(process.cwd());
 
@@ -11,6 +12,10 @@ const host = process.env.HOST || "localhost";
 
 module.exports = {
   entry: resolveAppPath("src"),
+  output: {
+    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, "dist"),
+  },
   resolve: {
     extensions: [".js", ".jsx"],
   },
@@ -58,6 +63,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
       template: resolveAppPath("public/index.html"),
