@@ -2,9 +2,10 @@ import React, { useState, useEffect, Suspense, lazy } from "react";
 import { Switch, Route } from "react-router-dom";
 import service from "./services/ListPublications";
 import SpinnerLoaderComponent from "./components/SpinnerLoaderComponent";
+import CompletePost from "./views/CompletePost";
+
 const Home = lazy(() => import("./views/Home"));
 const LatestsPosts = lazy(() => import("./views/LatestsPosts"));
-const CompletePost = lazy(() => import("./views/CompletePost"));
 
 const Routes = ({ filterObjectMiddlewareCallback }) => {
   const [listPublications, setListPublications] = useState([]);
