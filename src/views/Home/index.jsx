@@ -1,41 +1,41 @@
-import React, {useEffect, useState} from 'react';
-import './style.css';
-import SpinnerLoaderComponent from '../../components/SpinnerLoaderComponent';
-import ListPublicationsComponent from '../../components/ListPublicationsComponent';
+import React, { useEffect, useState } from "react";
+import "./style.css";
+import SpinnerLoaderComponent from "../../components/SpinnerLoaderComponent";
+import ListPublicationsComponent from "../../components/ListPublicationsComponent";
 
-const Home = ({filterObjectMiddlewareCallback, listPublications}) => {
+const Home = ({ filterObjectMiddlewareCallback, listPublications }) => {
   const [list, setList] = useState([]);
   const [loader, setLoader] = useState(true);
   const [filterObj] = useState(filterObjectMiddlewareCallback());
 
-  useEffect(()=>{
+  useEffect(() => {
     Promise.resolve(listPublications).then((res) => {
-      setList(res)
-  })
-  }, [listPublications])
+      setList(res);
+    });
+  }, [listPublications]);
 
-  useEffect(()=>{
-    if(listPublications.length === 0 ){
+  useEffect(() => {
+    if (listPublications.length === 0) {
       setLoader(true);
-    }else{
-      setTimeout(()=>{
+    } else {
+      setTimeout(() => {
         setLoader(false);
-      },1000)
+      }, 1000);
     }
-  }, [listPublications])
+  }, [listPublications]);
 
   return (
-      <>
+    <div data-testid="home">
       {loader ? (
-          <div className="loader">
-            <SpinnerLoaderComponent/>
-          </div>
-        ) : (
-          <>
-            <ListPublicationsComponent list={list} filter={filterObj}/>
-          </>
+        <div className="loader">
+          <SpinnerLoaderComponent />
+        </div>
+      ) : (
+        <>
+          <ListPublicationsComponent list={list} filter={filterObj} />
+        </>
       )}
-      </>
+    </div>
   );
 };
 

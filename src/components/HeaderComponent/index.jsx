@@ -5,12 +5,12 @@ import WelcomePhraseComponent from "../WelcomePhraseComponent";
 
 const HeaderComponent = ({ changeFilterStateCallback }) => {
   return (
-    <>
+    <div data-testid="header">
       <MenuComponent changeFilterStateCallback={changeFilterStateCallback} />
       <header className="headerBody">
         <WelcomePhraseComponent />
       </header>
-    </>
+    </div>
   );
 };
 

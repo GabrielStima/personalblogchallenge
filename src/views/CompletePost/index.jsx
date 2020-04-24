@@ -25,7 +25,7 @@ const CompletePost = ({ match, listPublications }) => {
   }, [listPublications]);
 
   return (
-    <>
+    <div data-testid="completePost">
       {loader ? (
         <div className="loader">
           <SpinnerLoaderComponent />
@@ -39,7 +39,7 @@ const CompletePost = ({ match, listPublications }) => {
           )}
         </>
       )}
-    </>
+    </div>
   );
 };
 

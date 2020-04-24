@@ -50,7 +50,7 @@ function App() {
   };
 
   return (
-    <main className="App">
+    <main data-testid="app" className="App">
       <div className="bodyPage">
         <BrowserRouter>
           <HeaderComponent changeFilterStateCallback={changeFilterState} />

@@ -3,32 +3,8 @@ import "./style.css";
 import NothingToShowComponent from "../NothingToShowComponent";
 import DemoPostComponent from "../DemoPostComponent";
 import OrderArrow from "../../assets/img/order.svg";
-
-const descendingOrder = (a, b) => {
-  let date1 = new Date(a.publishedAt);
-  let date2 = new Date(b.publishedAt);
-
-  if (date1 < date2) {
-    return 1;
-  }
-  if (date1 > date2) {
-    return -1;
-  }
-  return 0;
-};
-
-const ascendingOrder = (a, b) => {
-  let date1 = new Date(a.publishedAt);
-  let date2 = new Date(b.publishedAt);
-
-  if (date1 > date2) {
-    return 1;
-  }
-  if (date1 < date2) {
-    return -1;
-  }
-  return 0;
-};
+import { descendingOrder } from "../../utils/descendingOrder";
+import { ascendingOrder } from "../../utils/ascendingOrder";
 
 const ListPublicationsComponent = ({ list, filter }) => {
   const [listRender, setListRender] = useState([]);
@@ -90,7 +66,7 @@ const ListPublicationsComponent = ({ list, filter }) => {
   };
 
   return (
-    <>
+    <div data-testid="listPublications">
       <div className="ordenateButton" onClick={changeOrder}>
         <figure>
           <img src={OrderArrow} alt="Ordenate arrows" />
@@ -116,7 +92,7 @@ const ListPublicationsComponent = ({ list, filter }) => {
           )}
         </>
       )}
-    </>
+    </div>
   );
 };
 

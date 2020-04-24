@@ -19,7 +19,7 @@ const MenuComponent = ({ changeFilterStateCallback }) => {
   }, [changeFilterStateCallback, history]);
 
   return (
-    <>
+    <div data-testid="menu">
       <div
         className={`mobileLogo ${collapseSidebar && "mobileLogoFixed"}`}
         onClick={() => setCollapseSidebar(!collapseSidebar)}
@@ -48,7 +48,7 @@ const MenuComponent = ({ changeFilterStateCallback }) => {
           />
         </div>
       </nav>
-    </>
+    </div>
   );
 };
 

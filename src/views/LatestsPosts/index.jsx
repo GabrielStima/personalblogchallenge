@@ -1,19 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SpinnerLoaderComponent from "../../components/SpinnerLoaderComponent";
 import ListPublicationsComponent from "../../components/ListPublicationsComponent";
-
-const descendingOrder = (a, b) => {
-  let date1 = new Date(a.publishedAt);
-  let date2 = new Date(b.publishedAt);
-
-  if (date1 < date2) {
-    return 1;
-  }
-  if (date1 > date2) {
-    return -1;
-  }
-  return 0;
-};
+import { descendingOrder } from "../../utils/descendingOrder";
 
 const LatestsPosts = ({ filterObjectMiddlewareCallback, listPublications }) => {
   const [list, setList] = useState([]);
@@ -39,7 +27,7 @@ const LatestsPosts = ({ filterObjectMiddlewareCallback, listPublications }) => {
   }, [listPublications]);
 
   return (
-    <>
+    <div data-testid="latestsPosts">
       {loader ? (
         <div className="loader">
           <SpinnerLoaderComponent />
@@ -49,7 +37,7 @@ const LatestsPosts = ({ filterObjectMiddlewareCallback, listPublications }) => {
           <ListPublicationsComponent list={list} filter={filterObj} />
         </>
       )}
-    </>
+    </div>
   );
 };
 
