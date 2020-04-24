@@ -1,4 +1,4 @@
-const service = require("../../src/services/ListPublications").default;
+const service = require("../../../src/services/ListPublications").default;
 describe("Get formatted publications list", () => {
   test("Should be return a array", async () => {
     const result = await service.getListPublications();

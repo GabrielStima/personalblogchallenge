@@ -1,4 +1,4 @@
-const service = require("../../src/services/Publications").default;
+const service = require("../../../src/services/Publications").default;
 describe("Get list of publications", () => {
   it("Should be return a array", async () => {
     const result = await service.getPublications();
