@@ -3,7 +3,7 @@ import axios from "axios";
 export default {
   async getPublications() {
     return await axios
-      .get("http://www.mocky.io/v2/5be5e3fa2f000082000fc3f8")
+      .get("http://www.mocky.io/v2/5ea6f6002f00003f33c4e912")
       .then((result) => {
         return result.data;
       })
